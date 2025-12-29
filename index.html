@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFL Playoff Bracket Picker 2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🏈 NFL Playoff Bracket Picker 2025 🏈</h1>
+        <p>Click a team to advance them to the next round!</p>
+        <button id="resetBtn" class="reset-btn">Reset Bracket</button>
+    </header>
+
+    <main class="bracket-container">
+        <!-- AFC Wild Card (far left) -->
+        <div class="round afc-round" id="afc-wildcard">
+            <h3>AFC Wild Card</h3>
+            <div class="matchup" data-round="wildcard" data-game="afc-wc1">
+                <div class="team-slot" data-slot="afc-wc1-top"></div>
+                <div class="team-slot" data-slot="afc-wc1-bottom"></div>
+            </div>
+            <div class="bye-box">
+                <div id="afc-bye"></div>
+                <span>#1 BYE</span>
+            </div>
+            <div class="matchup" data-round="wildcard" data-game="afc-wc2">
+                <div class="team-slot" data-slot="afc-wc2-top"></div>
+                <div class="team-slot" data-slot="afc-wc2-bottom"></div>
+            </div>
+            <div class="matchup" data-round="wildcard" data-game="afc-wc3">
+                <div class="team-slot" data-slot="afc-wc3-top"></div>
+                <div class="team-slot" data-slot="afc-wc3-bottom"></div>
+            </div>
+        </div>
+
+        <!-- AFC Divisional -->
+        <div class="round afc-round" id="afc-divisional">
+            <h3>AFC Divisional</h3>
+            <div class="matchup" data-round="divisional" data-game="afc-div1">
+                <div class="team-slot" data-slot="afc-div1-top"></div>
+                <div class="team-slot" data-slot="afc-div1-bottom"></div>
+            </div>
+            <div class="matchup" data-round="divisional" data-game="afc-div2">
+                <div class="team-slot" data-slot="afc-div2-top"></div>
+                <div class="team-slot" data-slot="afc-div2-bottom"></div>
+            </div>
+        </div>
+
+        <!-- AFC Championship -->
+        <div class="round afc-round" id="afc-championship">
+            <h3>AFC Championship</h3>
+            <div class="matchup" data-round="championship" data-game="afc-champ">
+                <div class="team-slot" data-slot="afc-champ-top"></div>
+                <div class="team-slot" data-slot="afc-champ-bottom"></div>
+            </div>
+        </div>
+
+        <!-- Super Bowl (center) -->
+        <div class="super-bowl" id="super-bowl">
+            <h2>🏆 Super Bowl LIX 🏆</h2>
+            <div class="sb-matchup">
+                <div class="team-slot sb-slot" data-slot="sb-afc">
+                    <span class="placeholder">AFC</span>
+                </div>
+                <span class="vs">VS</span>
+                <div class="team-slot sb-slot" data-slot="sb-nfc">
+                    <span class="placeholder">NFC</span>
+                </div>
+            </div>
+            <div class="champion-box">
+                <div class="team-slot champion-slot" data-slot="champion">
+                    <span class="placeholder">CHAMPION</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- NFC Championship -->
+        <div class="round nfc-round" id="nfc-championship">
+            <h3>NFC Championship</h3>
+            <div class="matchup" data-round="championship" data-game="nfc-champ">
+                <div class="team-slot" data-slot="nfc-champ-top"></div>
+                <div class="team-slot" data-slot="nfc-champ-bottom"></div>
+            </div>
+        </div>
+
+        <!-- NFC Divisional -->
+        <div class="round nfc-round" id="nfc-divisional">
+            <h3>NFC Divisional</h3>
+            <div class="matchup" data-round="divisional" data-game="nfc-div1">
+                <div class="team-slot" data-slot="nfc-div1-top"></div>
+                <div class="team-slot" data-slot="nfc-div1-bottom"></div>
+            </div>
+            <div class="matchup" data-round="divisional" data-game="nfc-div2">
+                <div class="team-slot" data-slot="nfc-div2-top"></div>
+                <div class="team-slot" data-slot="nfc-div2-bottom"></div>
+            </div>
+        </div>
+
+        <!-- NFC Wild Card (far right) -->
+        <div class="round nfc-round" id="nfc-wildcard">
+            <h3>NFC Wild Card</h3>
+            <div class="matchup" data-round="wildcard" data-game="nfc-wc1">
+                <div class="team-slot" data-slot="nfc-wc1-top"></div>
+                <div class="team-slot" data-slot="nfc-wc1-bottom"></div>
+            </div>
+            <div class="bye-box">
+                <div id="nfc-bye"></div>
+                <span>#1 BYE</span>
+            </div>
+            <div class="matchup" data-round="wildcard" data-game="nfc-wc2">
+                <div class="team-slot" data-slot="nfc-wc2-top"></div>
+                <div class="team-slot" data-slot="nfc-wc2-bottom"></div>
+            </div>
+            <div class="matchup" data-round="wildcard" data-game="nfc-wc3">
+                <div class="team-slot" data-slot="nfc-wc3-top"></div>
+                <div class="team-slot" data-slot="nfc-wc3-bottom"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="teams.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

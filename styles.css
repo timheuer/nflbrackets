@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    color: white;
+    overflow-x: auto;
+}
+
+header {
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+    color: #aaa;
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+
+.reset-btn {
+    margin-top: 12px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Main bracket layout - horizontal flow */
+.bracket-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    gap: 0;
+    min-width: 1400px;
+    min-height: calc(100vh - 120px);
+}
+
+/* Round columns */
+.round {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    position: relative;
+}
+
+.round h3 {
+    font-size: 0.7rem;
+    color: #888;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    position: absolute;
+    top: -30px;
+}
+
+/* Wild Card rounds - spread out vertically */
+#afc-wildcard, #nfc-wildcard {
+    justify-content: space-between;
+    height: 450px;
+    padding-top: 40px;
+}
+
+/* Divisional rounds - two games centered */
+#afc-divisional, #nfc-divisional {
+    justify-content: space-around;
+    height: 350px;
+    padding-top: 40px;
+}
+
+/* Championship rounds - single game centered */
+#afc-championship, #nfc-championship {
+    justify-content: center;
+    height: 200px;
+    padding-top: 40px;
+}
+
+/* Matchup boxes */
+.matchup {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: relative;
+}
+
+/* Team slots */
+.team-slot {
+    width: 120px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.team-slot:hover {
+    border-color: #f1c40f;
+    background: rgba(241, 196, 15, 0.1);
+}
+
+.team-slot.selection-blocked {
+    animation: shake 0.3s ease-in-out;
+    border-color: #e74c3c;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.team-slot .placeholder {
+    color: #555;
+    font-size: 0.7rem;
+}
+
+/* Bye indicator */
+.bye-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.bye-box span {
+    font-size: 0.6rem;
+    color: #f1c40f;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.bye-box > div {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bye-box img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+/* Super Bowl section - CENTERED */
+.super-bowl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 20px;
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.2), rgba(255, 215, 0, 0.05));
+    border: 3px solid #d4af37;
+    border-radius: 15px;
+    margin: 0 20px;
+    min-width: 220px;
+    align-self: center;
+}
+
+.super-bowl h2 {
+    font-size: 1.2rem;
+    color: #ffd700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    white-space: nowrap;
+}
+
+.sb-matchup {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.sb-slot {
+    width: 85px;
+    height: 65px;
+    border-color: #d4af37;
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.vs {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.champion-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.champion-slot {
+    width: 110px;
+    height: 90px;
+    border: 3px solid #ffd700;
+    background: rgba(255, 215, 0, 0.15);
+}
+
+.champion-slot .placeholder {
+    color: #d4af37;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Team card */
+.team-card {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    padding: 4px 6px;
+    gap: 6px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    position: relative;
+}
+
+.team-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.team-card:active {
+    transform: scale(0.97);
+}
+
+.team-card img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.team-card .team-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.team-card .team-abbr {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #222;
+}
+
+.team-card .team-record {
+    font-size: 0.6rem;
+    color: #666;
+}
+
+.team-card .seed-badge {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 16px;
+    height: 16px;
+    background: #333;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.55rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-card.afc-team {
+    border-left: 4px solid #e74c3c;
+}
+
+.team-card.nfc-team {
+    border-left: 4px solid #3498db;
+}
+
+/* Champion slot special styling */
+.champion-slot .team-card {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 8px;
+    gap: 4px;
+}
+
+.champion-slot .team-card img {
+    width: 45px;
+    height: 45px;
+}
+
+.champion-slot .team-card .team-info {
+    align-items: center;
+}
+
+.champion-slot .team-card .seed-badge {
+    top: 2px;
+    left: 2px;
+}
+
+/* Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.team-slot .team-card {
+    animation: slideIn 0.25s ease-out;
+}
+
+/* Champion pulse animation */
+@keyframes championPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px 10px rgba(255, 215, 0, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+    }
+}
+
+.champion-slot.celebrating {
+    animation: championPulse 1s ease-in-out infinite;
+    border-color: #ffd700;
+    background: rgba(255, 215, 0, 0.3);
+}
+
+.champion-slot.celebrating .team-card {
+    animation: none;
+}
+
+/* Confetti canvas */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+    .bracket-container {
+        transform: scale(0.85);
+        transform-origin: top center;
+    }
+}
+
+@media (max-width: 1200px) {
+    .bracket-container {
+        transform: scale(0.7);
+        transform-origin: top center;
+    }
+}
