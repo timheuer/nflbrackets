@@ -38,7 +38,7 @@ const NFL_TEAMS = {
         
         // NFC North
         bears: { id: 'bears', name: 'Bears', city: 'Chicago', abbr: 'CHI', record: '11-6', logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/chi.png', division: 'NFC North' },
-        packers: { id: 'packers', name: 'Packers', city: 'Green Bay', abbr: 'GB', record: '9-6-1', logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/gb.png', division: 'NFC North' },
+        packers: { id: 'packers', name: 'Packers', city: 'Green Bay', abbr: 'GB', record: '9-7-1', logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/gb.png', division: 'NFC North' },
         lions: { id: 'lions', name: 'Lions', city: 'Detroit', abbr: 'DET', record: '8-8', logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/det.png', division: 'NFC North' },
         vikings: { id: 'vikings', name: 'Vikings', city: 'Minnesota', abbr: 'MIN', record: '8-8', logo: 'https://a.espncdn.com/i/teamlogos/nfl/500/min.png', division: 'NFC North' },
         
