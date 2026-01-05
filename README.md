@@ -46,22 +46,22 @@ python -m http.server 8080
 ## 2024-25 Playoff Teams
 
 **AFC Seeds:**
-1. Denver Broncos (13-3)
-2. New England Patriots (13-3)
-3. Jacksonville Jaguars (10-6)
-4. Pittsburgh Steelers (10-6)
-5. Houston Texans (10-6)
-6. Los Angeles Chargers (10-6)
-7. Buffalo Bills (10-6)
+1. Denver Broncos (14-3)
+2. New England Patriots (14-3)
+3. Jacksonville Jaguars (13-4)
+4. Pittsburgh Steelers (10-7)
+5. Houston Texans (12-5)
+6. Buffalo Bills (12-5)
+7. Los Angeles Chargers (11-6)
 
 **NFC Seeds:**
-1. Seattle Seahawks (13-3)
-2. Chicago Bears (11-5)
-3. Philadelphia Eagles (12-4)
-4. Carolina Panthers (8-8)
-5. San Francisco 49ers (12-4)
-6. Los Angeles Rams (11-4)
-7. Green Bay Packers (9-6-1)
+1. Seattle Seahawks (14-3)
+2. Chicago Bears (11-6)
+3. Philadelphia Eagles (11-6)
+4. Carolina Panthers (8-9)
+5. Los Angeles Rams (12-5)
+6. San Francisco 49ers (12-5)
+7. Green Bay Packers (9-7-1)
 
 ---
 
