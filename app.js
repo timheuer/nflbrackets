@@ -57,7 +57,7 @@ function populateBracket() {
         if (placeholder) placeholder.style.display = '';
     });
 
-    // AFC Wild Card matchups
+    // AFC Wild Card matchups - no games completed yet
     Object.entries(WILD_CARD_SETUP.AFC).forEach(([slotId, seed]) => {
         const slot = document.querySelector(`[data-slot="${slotId}"]`);
         const team = getPlayoffTeam('afc', seed);
@@ -68,7 +68,7 @@ function populateBracket() {
         }
     });
 
-    // NFC Wild Card matchups - only show teams still playing
+    // NFC Wild Card matchups - only show teams in games not yet completed
     Object.entries(WILD_CARD_SETUP.NFC).forEach(([slotId, seed]) => {
         const slot = document.querySelector(`[data-slot="${slotId}"]`);
         const team = getPlayoffTeam('nfc', seed);
@@ -76,14 +76,16 @@ function populateBracket() {
         // Check if this game has been completed
         // Extract game ID: 'nfc-wc1-top' -> 'nfc-wc1'
         const parts = slotId.split('-');
-        const gameId = `${parts[0]}-${parts[1]}`; // e.g., 'nfc-wc1'
-        const result = WILD_CARD_RESULTS && WILD_CARD_RESULTS[gameId];
-        
-        // Only show teams if game not completed
-        if (slot && team && (!result || !result.completed)) {
-            const placeholder = slot.querySelector('.placeholder');
-            if (placeholder) placeholder.style.display = 'none';
-            slot.appendChild(createTeamCard(team, seed, 'nfc'));
+        if (parts.length >= 2) {
+            const gameId = `${parts[0]}-${parts[1]}`; // e.g., 'nfc-wc1'
+            const result = WILD_CARD_RESULTS && WILD_CARD_RESULTS[gameId];
+            
+            // Only show teams if game not completed
+            if (slot && team && (!result || !result.completed)) {
+                const placeholder = slot.querySelector('.placeholder');
+                if (placeholder) placeholder.style.display = 'none';
+                slot.appendChild(createTeamCard(team, seed, 'nfc'));
+            }
         }
     });
 

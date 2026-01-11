@@ -45,23 +45,25 @@ python -m http.server 8080
 
 ## 2024-25 Playoff Teams
 
-**AFC Seeds:**
-1. Denver Broncos (14-3)
-2. New England Patriots (14-3)
-3. Jacksonville Jaguars (13-4)
-4. Pittsburgh Steelers (10-7)
-5. Houston Texans (12-5)
-6. Buffalo Bills (12-5)
-7. Los Angeles Chargers (11-6)
+**Updated as of January 10, 2025 - Wild Card Round Results**
 
-**NFC Seeds:**
-1. Seattle Seahawks (14-3)
-2. Chicago Bears (11-6)
-3. Philadelphia Eagles (11-6)
-4. Carolina Panthers (8-9)
-5. Los Angeles Rams (12-5)
-6. San Francisco 49ers (12-5)
-7. Green Bay Packers (9-7-1)
+**AFC Wild Card Games (Upcoming):**
+- 2. New England Patriots vs 7. Los Angeles Chargers
+- 3. Jacksonville Jaguars vs 6. Buffalo Bills
+- 4. Pittsburgh Steelers vs 5. Houston Texans
+- 1. Denver Broncos (Bye)
+
+**NFC Wild Card Results:**
+- ✅ 2. Chicago Bears 31, 7. Green Bay Packers 27
+- 3. Philadelphia Eagles vs 6. San Francisco 49ers (Upcoming)
+- ✅ 5. Los Angeles Rams 34, 4. Carolina Panthers 31
+
+**Still In Playoff Contention:**
+- **AFC:** Broncos (1), Patriots (2), Jaguars (3), Steelers (4), Texans (5), Bills (6), Chargers (7)
+- **NFC:** Seahawks (1), Bears (2), Eagles (3), Rams (5), 49ers (6)
+
+**Eliminated:**
+- **NFC:** Panthers (4), Packers (7)
 
 ---
 
