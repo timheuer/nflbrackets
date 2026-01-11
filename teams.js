@@ -100,7 +100,15 @@ const WILD_CARD_SETUP = {
     }
 };
 
+// Wild Card Results (Games completed as of January 10, 2025)
+// Format: { gameId: winningSeed, completed: true }
+const WILD_CARD_RESULTS = {
+    'nfc-wc1': { winner: 2, loser: 7, completed: true },  // Bears 31, Packers 27
+    'nfc-wc3': { winner: 5, loser: 4, completed: true }   // Rams 34, Panthers 31
+};
+
 // Export
 window.NFL_TEAMS = NFL_TEAMS;
 window.PLAYOFF_SEEDS = PLAYOFF_SEEDS;
 window.WILD_CARD_SETUP = WILD_CARD_SETUP;
+window.WILD_CARD_RESULTS = WILD_CARD_RESULTS;
