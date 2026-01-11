@@ -68,11 +68,19 @@ function populateBracket() {
         }
     });
 
-    // NFC Wild Card matchups
+    // NFC Wild Card matchups - only show teams still playing
     Object.entries(WILD_CARD_SETUP.NFC).forEach(([slotId, seed]) => {
         const slot = document.querySelector(`[data-slot="${slotId}"]`);
         const team = getPlayoffTeam('nfc', seed);
-        if (slot && team) {
+        
+        // Check if this game has been completed
+        // Extract game ID: 'nfc-wc1-top' -> 'nfc-wc1'
+        const parts = slotId.split('-');
+        const gameId = `${parts[0]}-${parts[1]}`; // e.g., 'nfc-wc1'
+        const result = WILD_CARD_RESULTS && WILD_CARD_RESULTS[gameId];
+        
+        // Only show teams if game not completed
+        if (slot && team && (!result || !result.completed)) {
             const placeholder = slot.querySelector('.placeholder');
             if (placeholder) placeholder.style.display = 'none';
             slot.appendChild(createTeamCard(team, seed, 'nfc'));
@@ -109,6 +117,29 @@ function populateBracket() {
         if (nfcBye) {
             nfcBye.innerHTML = `<img src="${nfcOneSeed.logo}" alt="${nfcOneSeed.abbr}">`;
         }
+    }
+
+    // Place Wild Card winners in Divisional round (if games are completed)
+    if (WILD_CARD_RESULTS) {
+        Object.entries(WILD_CARD_RESULTS).forEach(([gameId, result]) => {
+            if (result.completed) {
+                const conference = gameId.split('-')[0]; // 'afc' or 'nfc'
+                const winnerTeam = getPlayoffTeam(conference, result.winner);
+                
+                if (winnerTeam) {
+                    // Determine divisional slot based on advancement map
+                    const nextSlotId = getNextSlot('wildcard', gameId);
+                    if (nextSlotId) {
+                        const nextSlot = document.querySelector(`[data-slot="${nextSlotId}"]`);
+                        if (nextSlot) {
+                            const placeholder = nextSlot.querySelector('.placeholder');
+                            if (placeholder) placeholder.style.display = 'none';
+                            nextSlot.appendChild(createTeamCard(winnerTeam, result.winner, conference));
+                        }
+                    }
+                }
+            }
+        });
     }
 }
 
